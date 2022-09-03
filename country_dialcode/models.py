@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from country_dialcode.intermediate_model_base_class import Model
 
 prefix_type_list = ((0, "Landline"),
@@ -18,9 +18,9 @@ class Country(Model):
     For instance : USA, 1, United States
     """
     countrycode = models.CharField(max_length=3, verbose_name=_('ISO alpha-3'),
-                                   help_text=_("Enter Country Code. e.g. USA - ISO alpha-3"))
+                                   help_text=_("Enter Country Code. e.g. NGR - ISO alpha-3"))
     iso2 = models.CharField(verbose_name=_('ISO alpha-2'),
-                            max_length=2, default='')
+                            max_length=2, default='',help_text=_("Enter Country Code. e.g. NG - ISO alpha-2"))
     countryprefix = models.IntegerField(verbose_name=_('Prefix'),
                                         help_text=_("Enter Country Prefix. e.g. 1"))
     countryname = models.CharField(max_length=240, verbose_name=_('Name'),

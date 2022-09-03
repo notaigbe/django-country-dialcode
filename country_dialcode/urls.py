@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from django.conf.urls.defaults import patterns
+from django.urls import path
 
-urlpatterns = patterns('')
+urlpatterns = path('')

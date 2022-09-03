@@ -21,11 +21,11 @@ class PrefixAdmin(admin.ModelAdmin):
     list_display = ('prefix', 'destination', 'country_name', 'carrier_name')
     ordering = ('prefix',)
 
-    # list_filter = ['country_name', 'carrier_name']
+    list_filter = ['country_name', 'carrier_name']
 
     def __str__(self, *args, **kwargs):
         super(PrefixAdmin, self).__str__(*args, **kwargs)
-        # self.list_display_links = (None, )
+        self.list_display_links = ('prefix', )
 
 
 admin.site.register(Prefix, PrefixAdmin)

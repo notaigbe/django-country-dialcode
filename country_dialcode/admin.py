@@ -18,14 +18,14 @@ admin.site.register(Country, CountryAdmin)
 
 class PrefixAdmin(admin.ModelAdmin):
     search_fields = ('prefix', 'destination')
-    list_display = ('prefix', 'destination', 'country_name', 'carrier_name')
+    list_display = ('prefix', 'destination', 'country_id', 'carrier_name')
     ordering = ('prefix',)
 
-    list_filter = ['country_name', 'carrier_name']
+    # list_filter = ['country_name', 'carrier_name']
 
     def __str__(self, *args, **kwargs):
         super(PrefixAdmin, self).__str__(*args, **kwargs)
-        self.list_display_links = ('prefix', )
+        # self.list_display_links = (None, )
 
 
 admin.site.register(Prefix, PrefixAdmin)
